@@ -3,13 +3,13 @@ using UnityEngine;
 public class HealthScript : MonoBehaviour
 {
     [SerializeField] float maxHealth;
+    [SerializeField] Animator animator;
+    [SerializeField] GameObject obj;
     private float health;
-    private bool isAlive;
 
     private void Awake()
     {
         health = maxHealth;
-        isAlive = true;
     }
     
     public void TakeDamage(float damage)
@@ -20,13 +20,18 @@ public class HealthScript : MonoBehaviour
 
     private void CheckAlive()
     {
-        if (health > 0)
+        if (health <= 0)
         {
-            isAlive = true;
+            obj.SetActive(false);
+            animator.SetBool("JumpTrigger", true);
         }
-        else
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Damage"))
         {
-            isAlive = false;
+            TakeDamage(collision.gameObject.GetComponent<DamageDeallerScript>().Damage);
         }
     }
 

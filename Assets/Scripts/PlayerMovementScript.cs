@@ -68,15 +68,6 @@ public class PlayerMovementScript : MonoBehaviour
             OnPlatformMovement(direction);
         }
 
-        //if (isGrounded && direction == 0)
-        //{
-        //    isGroundedStey = true;
-        //}
-        //else
-        //{
-        //    isGroundedStey = false;
-        //}
-
         Direction(target);
 
         if (target.x - transform.position.x > 0)

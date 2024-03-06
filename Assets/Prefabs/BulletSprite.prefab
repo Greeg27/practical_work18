@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 8265836360804015326}
   - component: {fileID: 3301461601681601983}
   - component: {fileID: 8400409589092745123}
-  m_Layer: 0
-  m_Name: Dynamic Sprite
+  - component: {fileID: 5756408303407463617}
+  - component: {fileID: 4712951619765471870}
+  m_Layer: 10
+  m_Name: BulletSprite
   m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,12 +116,38 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.1
+  m_Mass: 0.03
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0.05
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c4544b12faf41c04fab3e8085ea80ab5, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &5756408303407463617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259539134377501210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dcfc6582cd11914fb35a4c7a11cb6b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 1
+--- !u!114 &4712951619765471870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259539134377501210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2ed0541d81639489fa1bc20801b193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 10
